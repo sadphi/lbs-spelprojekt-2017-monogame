@@ -347,10 +347,11 @@ namespace inkArenaGame
                         {
                             if (p.lives == 0)
                             {
+                                MediaPlayer.Play(dabSong);
                                 currentState = GameState.GameOver;
                                 players.Remove(p);
                                 players[0].position = new Vector2(1920 / 2 - 16, 1056 / 2 - 15);
-                                MediaPlayer.Play(dabSong);
+                                Console.WriteLine(MediaPlayer.State); //Somehow fixes the auto-playing bug of dabSong
                                 MediaPlayer.Pause();
                                 break;
                             }
